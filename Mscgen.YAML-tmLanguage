@@ -1,0 +1,54 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Mscgen
+scopeName: source.mscgen
+fileTypes: [msc, mscgen]
+uuid: 8c167ec3-61c7-4492-b9ed-900fc02ae4fd
+
+patterns:
+- comment: Comment
+  match: \#.*$
+  name: comment.line.mscgen
+
+- comment: Encapsulating
+  begin: (msc)\s+{
+  end: \}
+  name: msc.block.mscgen
+  beginCaptures:
+    '1': {name: support.type.msc.mscgen}
+  patterns:
+  - include: $base
+  - include: '#string'
+
+  - comment: Arrows
+    match: (\w+)\s*((->\*?)|(\*?<-)|(=>)|(<=)|(=?>>)|(<<=?)|(-x)|(x-)|((a|r)?box)|note)\s*(\w+)
+    captures:
+      # '1': {name: variable}
+      '2': {name: keyword.arrow.mscgen}
+      # '13': {name: variable}
+
+  - comment: Attributes
+    begin: \[
+    end: \]
+    name: braces.meta.mscgen
+    patterns:
+      - include: '#string'
+      - include: '#attributes'
+
+  - include: '#optionselection'
+
+repository:
+  string:
+    comment: String
+    begin: \"
+    end: \"
+    name: string.quoted.double.mscgen
+  attributes:
+    match: \b(label|URL|ID|IDURL|arcskip|linecolour|linecolor|textcolour|textcolor|textbgcolour|textbgcolor|arclinecolour|arclinecolor|arctextcolour|arctextcolor|arctextbgcolour|arctextbgcolor\b)
+    name: keyword.attribute.mscgen
+  optionselection:
+    comment: Possible options
+    match: \b(hscale|width|arcgradient|wordwraparcs\b)
+    name: keyword.option.mscgen
+
+...

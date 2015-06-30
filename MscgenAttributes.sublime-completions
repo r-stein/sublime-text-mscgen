@@ -1,0 +1,23 @@
+{
+	"scope": "source.mscgen -- braces.meta.mscgen",
+	"completions":
+	[
+		"label",
+		"URL",
+		"ID",
+		"IDURL",
+		"arcskip",
+		"linecolour",
+		"linecolor",
+		"textcolour",
+		"textcolor",
+		"textbgcolour",
+		"textbgcolor",
+		"arclinecolour",
+		"arclinecolor",
+		"arctextcolour",
+		"arctextcolor",
+		"arctextbgcolour",
+		"arctextbgcolor",
+	]
+}

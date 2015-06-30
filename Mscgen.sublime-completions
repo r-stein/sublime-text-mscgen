@@ -1,0 +1,10 @@
+{
+	"scope": "source.mscgen -- msc.block.mscgen",
+	"completions":
+	[
+		"hscale",
+		"width",
+		"arcgradient",
+		"wordwraparcs",
+	]
+}
