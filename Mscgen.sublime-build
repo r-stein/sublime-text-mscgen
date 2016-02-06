@@ -4,19 +4,19 @@
 	"variants": [
 		{
 			"name": "Convert to PNG...",
-			"cmd": ["mscgen", "-T", "png", "-i", "$file_name", "-o", "$file_base_name.png"],
+			"cmd": ["mscgen", "-T", "png", "-i", "$file_name", "-o", "$file_base_name.png"]
 		},
 		{
 			"name": "Convert to SVG...",
-			"cmd": ["mscgen", "-T", "svg", "-i", "$file_name", "-o", "$file_base_name.svg"],
+			"cmd": ["mscgen", "-T", "svg", "-i", "$file_name", "-o", "$file_base_name.svg"]
 		},
 		{
 			"name": "Convert to EPS...",
-			"cmd": ["mscgen", "-T", "eps", "-i", "$file_name", "-o", "$file_base_name.eps"],
+			"cmd": ["mscgen", "-T", "eps", "-i", "$file_name", "-o", "$file_base_name.eps"]
 		},
 		{
 			"name": "Convert to PDF...",
-			"shell_cmd": "mscgen -T eps -i $file_name -o $file_base_name.eps && epstopdf $file_base_name.eps",
-		},
+			"shell_cmd": "mscgen -T eps -i $file_name -o $file_base_name.eps && epstopdf $file_base_name.eps"
+		}
 	]
 }
